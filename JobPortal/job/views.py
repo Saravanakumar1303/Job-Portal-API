@@ -52,7 +52,7 @@ class JobUpdateAPIView(APIView):
 class JobDeleteAPIView(APIView):
     permission_classes = [IsRecruiter]
 
-    def get(self, request, pk):
+    def delete(self, request, pk):
         job = get_object_or_404(Job, pk=pk)
         job.delete()
         return Response({"message":"Job Deleted Successfully."},status=status.HTTP_200_OK)

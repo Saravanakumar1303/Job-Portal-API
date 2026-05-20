@@ -23,7 +23,7 @@ class Resume(models.Model):
     resume = models.FileField(upload_to='resumes/')
     skills = models.TextField(blank=True)
     experience = models.TextField(blank=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
         return f"{self.user.username} Resume"
